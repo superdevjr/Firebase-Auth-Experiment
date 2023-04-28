@@ -14,21 +14,31 @@
     </style>
   </head>
   <body>
-    <div id="authForm"></div>
-    <h2>Sign up or Sign in</h2>
-    <input type="email" placeholder="email" id="userEmail" />
-    <input type="password" placeholder="password" id="userPassword" />
-    <br /><br />
-    <button id="signUpButton">Sign up</button>
-    <button id="signInButton">Sign in</button>
+    <div id="authForm">
+      <h2>Sign up or Sign in</h2>
+      <input type="email" placeholder="email" id="userEmail" />
+      <input type="password" placeholder="password" id="userPassword" />
+      <br /><br />
+      <button id="signUpButton">Sign up</button>
+      <button id="signInButton">Sign in</button>
+    </div>
+
     <div id="secretContent">
       <h3>this is top secret information that you can only see if</h3>
       <h1>authenticated</h1>
       <button id="signOutButton">Sign Out</button>
     </div>
+
     <script type="module">
       // Import the functions you need from the SDKs you need
       import { initializeApp } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-app.js";
+      import {
+        getAuth,
+        createUserWithEmailAndPassword,
+        signInWithEmailAndPassword,
+        onAuthStateChanged,
+        signOut,
+      } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-auth.js";
       // TODO: Add SDKs for Firebase products that you want to use
       // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -44,6 +54,15 @@
 
       // Initialize Firebase
       const app = initializeApp(firebaseConfig);
+      const auth = getAuth(app);
+
+      const userEmail = document.querySelector("#userEmail");
+      const userPassword = document.querySelector("#userPassword");
+      const authForm = document.querySelector("#authForm");
+      const secretContent = document.querySelector("#secretContent");
+      const signUpButton = document.querySelector("#signUpButton");
+      const signInButton = document.querySelector("#signInButton");
+      const signOutButton = document.querySelector("#signOutButton");
     </script>
   </body>
 </html>
