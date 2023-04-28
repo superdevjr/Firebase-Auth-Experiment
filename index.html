@@ -26,5 +26,24 @@
       <h1>authenticated</h1>
       <button id="signOutButton">Sign Out</button>
     </div>
+    <script type="module">
+      // Import the functions you need from the SDKs you need
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-app.js";
+      // TODO: Add SDKs for Firebase products that you want to use
+      // https://firebase.google.com/docs/web/setup#available-libraries
+
+      // Your web app's Firebase configuration
+      const firebaseConfig = {
+        apiKey: "AIzaSyBDF2tPJNev_7kCBh5mnPqU3e_7fkPvtvY",
+        authDomain: "authtest-40580.firebaseapp.com",
+        projectId: "authtest-40580",
+        storageBucket: "authtest-40580.appspot.com",
+        messagingSenderId: "17929064987",
+        appId: "1:17929064987:web:cff111a788bcf3e49a1ebe",
+      };
+
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+    </script>
   </body>
 </html>
